@@ -12,7 +12,7 @@ The software has the following functionalities:
 - Exporting the list of entries as plain text or CSV;
 - Printing.
 
-The software is commentend in italian with Javadoc-style comments. The UI is handled by Java Swing.
+The software is commentend in italian with Javadoc-style comments and doesn't use any external library. The UI is handled by Java Swing.
 Any documentation can be found in the [docs](/docs) folder.
 
 This assignment has been the final exam for the Object Oriented Programming course held at Università di Modena e Reggio Emilia, as part of the 
