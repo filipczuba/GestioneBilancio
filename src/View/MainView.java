@@ -89,6 +89,7 @@ public class MainView extends JFrame {
         pack();
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setTitle("Gestione Bilancio");
         setVisible(true);
     }
 
