@@ -21,7 +21,7 @@ public class AutoSave extends Thread {
     /**
      * Costruttore della classe AutoSave, assegna un valore all'attributo bilancio di questa istanza.
      * 
-     * @param bilancio oggetto di tipo {@link Bilancio} da assegnare all'attrbibuto bilancio di questa istanza.
+     * @param bilancio oggetto di tipo {@link Bilancio} da assegnare all'attributo bilancio di questa istanza.
      */
     public AutoSave(Bilancio bilancio) {
 
