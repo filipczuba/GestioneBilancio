@@ -26,6 +26,12 @@ public class AutoSave extends Thread {
     public AutoSave(Bilancio bilancio) {
 
         this.bilancio=bilancio;
+
+        File folder = new File(System.getProperty("user.dir")+"/data");
+            if(!folder.exists()) {
+
+                folder.mkdir();
+            }
     }
 
 
@@ -36,12 +42,8 @@ public class AutoSave extends Thread {
     @Override
     public void run() {
 
-            File folder = new File(System.getProperty("user.dir")+"/data");
-            if(!folder.exists()) {
-
-                folder.mkdir();
-            }
         while (true) {
+
             try {
 
                 Thread.sleep(200);
