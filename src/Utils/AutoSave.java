@@ -31,7 +31,7 @@ public class AutoSave extends Thread {
 
     /**
      * Override del metodo {@link java.lang.Thread#run()}, implementa il salvataggio automatico ogni 200 ms del contenuto di bilancio
-     * sul file /data/temp.bal.
+     * sul file /data/temp.bal. Se assente, crea la cartella data.
      */
     @Override
     public void run() {
@@ -43,6 +43,12 @@ public class AutoSave extends Thread {
 
                     SwingUtilities.invokeLater(() -> {
                         try {
+
+                            File folder = new File(System.getProperty("user.dir")+"/data/");
+                            if(!folder.exists()) {
+
+                                folder.createNewFile();
+                            }
 
                             File file = new File(System.getProperty("user.dir")+"/data/temp.bal");
                             if(!file.exists()) {
