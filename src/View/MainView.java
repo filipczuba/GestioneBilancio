@@ -94,12 +94,13 @@ public class MainView extends JFrame {
     }
 
     /**
-     * Aggiorna il TableModel con un nuovo insieme di dati, poi viene aggiornata la JTable e viene ricalcolato il totale delle voci.
+     * Aggiorna il TableModel con un nuovo insieme di dati, poi viene aggiornata la JTable e viene ricalcolato il totale delle voci arrotondato a 2 decimali.
      * @param bilancio oggetto da cui viene preso il nuovo insieme di dati tramite {@link Model.Bilancio#getData()}.
      */
     public void setDataUpdate(Bilancio bilancio){
         tableView.setTableData(bilancio.getData());
         tableView.updateTable();
-        menuBarView.setTotale(bilancio.calcolaTotale().toString());
+        Double totale = (Math.round(bilancio.calcolaTotale()*100.0)/100.0);
+        menuBarView.setTotale(totale.toString());
     }
 }
