@@ -13,14 +13,11 @@ SRC := 	$(wildcard $(SRC_DIR)/*.java) \
 		$(wildcard $(SRC_DIR)/Utils/*.java) \
 		$(wildcard $(SRC_DIR)/FileManagement/*.java)
 
-BIN := $(patsubst $(SRC_DIR)/%.java,$(BIN_DIR)/%.class,$(SRC))
-
 .PHONY: all run docs clean cleanall
 
-all: $(BIN)
+all:
 
-$(BIN_DIR)/%.class: $(SRC_DIR)/*.java
-	$(COMPILER) $(COMPILE_FLAGS) $<
+	$(COMPILER) $(COMPILE_FLAGS) $(SRC)
 
 run:
 	$(JVM) -cp $(BIN_DIR) Bilancio
