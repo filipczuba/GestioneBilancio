@@ -1,5 +1,6 @@
 SRC_DIR := src
 BIN_DIR := bin
+DOCS_DIR := docs
 COMPILER := javac
 JVM := java
 COMPILE_FLAGS := -d $(BIN_DIR) -sourcepath $(SRC_DIR)
@@ -13,7 +14,7 @@ SRC := 	$(wildcard $(SRC_DIR)/*.java) \
 
 BIN := $(patsubst $(SRC_DIR)/%.java,$(BIN_DIR)/%.class,$(SRC))
 
-.PHONY: all run clean
+.PHONY: all run clean docs
 
 all: $(BIN)
 
@@ -26,4 +27,5 @@ run:
 clean:
 	find $(BIN_DIR) -name "*.class" -delete
 
-
+docs:
+	javadoc -d $(DOCS_DIR) -cp $(SRC_DIR) -subpackages View:Model:Controller:Utils:FileManagement
