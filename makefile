@@ -1,6 +1,7 @@
 SRC_DIR := src
 BIN_DIR := bin
 DOCS_DIR := docs
+DATA_DIR := data
 COMPILER := javac
 JVM := java
 COMPILE_FLAGS := -d $(BIN_DIR) -sourcepath $(SRC_DIR)
@@ -14,7 +15,7 @@ SRC := 	$(wildcard $(SRC_DIR)/*.java) \
 
 BIN := $(patsubst $(SRC_DIR)/%.java,$(BIN_DIR)/%.class,$(SRC))
 
-.PHONY: all run clean docs
+.PHONY: all run docs clean cleanall
 
 all: $(BIN)
 
@@ -24,8 +25,13 @@ $(BIN_DIR)/%.class: $(SRC_DIR)/*.java
 run:
 	$(JVM) -cp $(BIN_DIR) Bilancio
 
+docs:
+	javadoc -d $(DOCS_DIR) -cp $(SRC_DIR) -subpackages View:Model:Controller:Utils:FileManagement
+
 clean:
 	find $(BIN_DIR) -name "*.class" -delete
 
-docs:
-	javadoc -d $(DOCS_DIR) -cp $(SRC_DIR) -subpackages View:Model:Controller:Utils:FileManagement
+cleanall:
+	rm -rf $(BIN_DIR)
+	rm -rf $(DOCS_DIR)
+	rm -rf $(DATA_DIR)
