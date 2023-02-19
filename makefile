@@ -20,7 +20,7 @@ all:
 	$(COMPILER) $(COMPILE_FLAGS) $(SRC)
 
 run:
-	$(JVM) -cp $(BIN_DIR) Bilancio
+	$(JVM) -cp $(BIN_DIR) GestioneBilancio
 
 docs:
 	javadoc -d $(DOCS_DIR) -cp $(SRC_DIR) -subpackages View:Model:Controller:Utils:FileManagement
