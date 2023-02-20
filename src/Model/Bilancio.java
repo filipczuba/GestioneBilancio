@@ -15,6 +15,10 @@ import java.io.*;
  */
 public class Bilancio {
     
+
+    /**
+     * {@link ArrayList} di oggetti di tipo {@link Voce}.
+     */
     private ArrayList<Voce> Bilancio;
 
 
