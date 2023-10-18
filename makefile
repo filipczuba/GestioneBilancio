@@ -20,8 +20,7 @@ all:
 	$(COMPILER) $(COMPILE_FLAGS) $(SRC)
 
 run:
-
-	if [ ! -d $(BIN_DIR) ]; then $(COMPILER) $(COMPILE_FLAGS) $(SRC); fi
+	if [ ! -d $(BIN_DIR) ]; then make; fi
 
 	$(JVM) -cp $(BIN_DIR) GestioneBilancio
 
@@ -29,7 +28,7 @@ docs:
 	javadoc -d $(DOCS_DIR) -cp $(SRC_DIR) -subpackages View:Model:Controller:Utils:FileManagement
 
 clean:
-	find $(BIN_DIR) -name "*.class" -delete
+	rm -rf $(BIN_DIR)
 
 cleanall:
 	rm -rf $(BIN_DIR)
