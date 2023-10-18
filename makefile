@@ -20,6 +20,9 @@ all:
 	$(COMPILER) $(COMPILE_FLAGS) $(SRC)
 
 run:
+
+	if [ ! -d $(BIN_DIR) ]; then $(COMPILER) $(COMPILE_FLAGS) $(SRC); fi
+
 	$(JVM) -cp $(BIN_DIR) GestioneBilancio
 
 docs:
