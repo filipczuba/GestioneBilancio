@@ -26,4 +26,4 @@ This assignment has been the final exam for the Object Oriented Programming cour
 Computer Science curriculum.
 
 
-![alt text](https://github.com/filipczuba/GestioneBilancio/screenshot.png)
+![alt text](https://github.com/filipczuba/GestioneBilancio/blob/master/screenshot.png)
