@@ -24,3 +24,6 @@ The included makefile has the following functionalities:
 
 This assignment has been the final exam for the Object Oriented Programming course held at Università di Modena e Reggio Emilia, as a part of the 
 Computer Science curriculum.
+
+
+![alt text](https://github.com/filipczuba/GestioneBilancio/screenshot.png)
